@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Twin Cities Animal Rescue</title>
+</head>
+<body>
+  <header>
+    <img src="media/rescue-logo_c.png" alt="Twin Cities Animal Rescue corporate logo." width="120">
+    <h1>Twin Cities Animal Rescue</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Main Website Content Areas -->
+  <main id="main-content">
+    
+    <!-- Office Hours & Service Area Info -->
+    <section>
+      <h2>Reach Out to Us</h2>
+      <p><strong>Where We Serve:</strong> The Twin Cities Metro region and surrounding local neighborhoods.</p>
+      <p><strong>Our Hours:</strong> Monday through Saturday, 9:00 AM to 5:00 PM (Our volunteers rest on Sundays!).</p>
+    </section>
+
+    <!-- Section 2: Required HTML Form with Fieldset & Validation -->
+    <section>
+      <h2>Volunteer & Foster Interest Form</h2>
+      <p>If you have room in your heart or your schedule to help, please fill out our simple form below. <br>A volunteer coordinator will read through your response and get back to you within a few business days.</p>
+      <audio
+				src="media/rescue-message_c.mp3"
+				controls
+				loop
+				muted>
+				Your browser cannot play this audio.
+			</audio>
+      <form action="/submit-application" method="post">
+       
+        <fieldset style="display: inline-block; padding: 20px; max-width: 500px;">
+          <legend><strong>Join Our Volunteer Network</strong></legend>
+
+          <!-- Name  -->
+          <p>
+            <label for="user-name">Your Full Name:</label><br>
+            <input type="text" id="user-name" name="full_name" placeholder="e.g. Jane Doe" required>
+          </p>
+
+          <!-- Email  -->
+          <p>
+            <label for="user-email">Email Address:</label><br>
+            <input type="email" id="user-email" name="email_address" placeholder="name@example.com" required>
+          </p>
+
+          <!-- Dropdown Option  -->
+          <p>
+            <label for="interest-type">How Would You Like to Help?</label><br>
+            <select id="interest-type" name="interest_category" required>
+              <option value="">-- Please Select an Option --</option>
+              <option value="volunteer">I want to volunteer my time</option>
+              <option value="foster">I want to become a foster home</option>
+              <option value="adoption">I have a general question about an animal</option>
+            </select>
+          </p>
+
+          <!-- Availability  -->
+                   <!-- Explicit Checkbox for Availability -->
+          <p>When Are You Usually Available? (Select all that apply):<br>
+            
+            <input type="checkbox" id="avail-weekday" name="availability" value="weekday">
+            <label for="avail-weekday">Weekday Mornings (Mon-Fri)</label><br>
+            
+            <input type="checkbox" id="avail-evening" name="availability" value="evening">
+            <label for="avail-evening">Weekday Evenings (Mon-Fri)</label><br>
+            
+            <input type="checkbox" id="avail-weekend" name="availability" value="weekend">
+            <label for="avail-weekend">Saturdays</label><br>
+            <input type="checkbox" id="avail-weekend" name="availability" value="weekend">
+            <label for="avail-weekend">Sundays</label>
+          </p>
+
+
+          <!-- Experience Group -->
+          <p>
+            <label for="user-experience">Tell Us a Little About Your Experience With Pets:</label><br>
+            <textarea id="user-experience" name="pet_experience" rows="3" style="width: 95%;" placeholder="Do you currently have pets? Have you cared for rescue animals before?" required></textarea>
+          </p>
+
+          <!-- Short Message Group -->
+          <p>
+            <label for="user-message">Anything Else You Would Like to Share? (Optional):</label><br>
+            <textarea id="user-message" name="personal_message" rows="3" style="width: 95%;" placeholder="Tell us what inspired you to reach out!"></textarea>
+          </p>
+
+          <button type="submit">Submit My Inquiry</button>
+
+        </fieldset>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Page Footer -->
+  <footer>
+    <p>&copy; 2026 Twin Cities Animal Rescue.
+  </footer>
+
+</body>
+</html>
