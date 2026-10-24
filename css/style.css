@@ -1,19 +1,25 @@
+/* ==========================================
+   1. GLOBAL RESETS & PAGE BASICS
+   ========================================== */
 *, *::before, *::after {
   box-sizing: border-box;
 } 
 
 body { 
   font-family: Arial, Helvetica, sans-serif;
-  color: #2F2A26;            /* Charcoal*/
-  background-color: #FFF8F0;
+  color: #2F2A26;            /* Deep charcoal text for easy reading */
+  background-color: #FFF8F0; /* Soft warm cream background */
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 } 
 
+/* ==========================================
+   2. REPEATED TEXT & BOX ELEMENTS
+   ========================================== */
 header h1 {
-  color: white;              
+  color: #FFF8F0;            /* Warm cream text for the main title */
   font-size: 36px;           
   font-weight: bold;
   margin-bottom: 12px;
@@ -21,7 +27,7 @@ header h1 {
 
 h2 {
   font-size: 24px;
-  color: #6B3E26;            /* Brown  */
+  color: #6B3E26;            /* Rich earthy brown subheadings */
   margin-top: 24px;
   margin-bottom: 12px;
 }
@@ -29,7 +35,7 @@ h2 {
 section {
   padding: 16px;
   margin-bottom: 24px;
-  background-color: #FFFFFF; 
+  background-color: #FFFFFF; /* Clean white boxes for text content */
   border-radius: 8px;
 }
 
@@ -45,16 +51,19 @@ img, video, audio {
   border-radius: 6px;
 }
 
+/* ==========================================
+   3. NAVIGATION MENU & HEADER (Earthy Styles)
+   ========================================== */
 header {
-  background-color: #00A88F; /* green background */
-  padding: 16px;
+  background-color: #6B3E26; /* Warm earthy brown top bar */
+  padding: 24px 16px;
 }
 
 header nav ul {
   list-style: none;
   padding: 0;
   display: flex; 
-  flex-direction: column;  
+  flex-direction: column;    /* Stacks menu buttons vertically on phone screens */
   gap: 8px; 
 }
 
@@ -62,20 +71,21 @@ header nav a {
   display: block;
   padding: 12px 20px;        
   text-decoration: none;
-  color: #2F2A26;            /* Charcoal text so it stands out clearly on peach */              
-  background-color: #D88C5A; /* Beautiful peach background color! */
-  border: 1px solid white;   
+  color: #2F2A26;            /* Charcoal text for easy reading */
+  background-color: #D88C5A; /* Warm peach background buttons */
+  border: 1px solid #FFF8F0;   
   font-weight: bold;
   text-align: center;
   border-radius: 4px;
 }
 
-
 header nav a[aria-current="page"] {
-  background-color: #D88C5A; 
-  color: #2F2A26;
+  background-color: #FFF8F0; /* Cream color highlight for the page you are on */
+  color: #6B3E26;            /* Earthy brown text for the active page link */
+  border: 2px solid #D88C5A;
 }
 
+/* Form Submission Button */
 button {
   padding: 12px 24px;
   background-color: #D88C5A; /* Peach action button */
@@ -86,6 +96,9 @@ button {
   cursor: pointer;
 }
 
+/* ==========================================
+   4. CONTACT FORM COMPONENT STYLING
+   ========================================== */
 fieldset {
   border: 2px solid #D88C5A; /* Peach form frame */
   border-radius: 8px;
@@ -100,29 +113,36 @@ input[type="text"], input[type="email"], select, textarea {
   border-radius: 4px;
 }
 
+/* ==========================================
+   5. RESPONSIVE LAYOUT BREAKPOINT
+   ========================================== */
 @media (min-width: 768px) { 
   header {
     display: flex;
-    flex-direction: row;         
+    flex-direction: row;         /* Puts logo on the left, text container on the right */
     justify-content: flex-start; 
     align-items: center;         
-    gap: 24px;                   
+    gap: 32px;                   
+    padding: 24px 40px;
   }
 
   .header-text-group {
     display: flex;
-    flex-direction: row;     
-    align-items: flex-start;     
+    flex-direction: column;      /* Places menu down beneath your main title */
+    align-items: center;         /* Centers your title and navigation bar completely! */
+    flex-grow: 1;                
+    margin-right: 120px;         /* Balances empty layout gaps beautifully */
+    text-align: center;
   }
 
   header nav ul { 
-    flex-direction: row;        
+    flex-direction: row;         /* Transforms navigation links into a side-by-side row */
     gap: 16px;
   } 
 }
 
 footer {
-  background-color: #2F2A26;   
+  background-color: #2F2A26;   /* Dark charcoal bottom bar */
   color: #FFF8F0;
   text-align: center;
   padding: 16px;
