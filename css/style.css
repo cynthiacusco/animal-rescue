@@ -13,8 +13,9 @@ body {
 } 
 
 h1 { 
-  font-size: 32px; 
-  color: #6B3E26;            /* Brown titles */
+  font-size: 38px;          
+  color: #2E7D32;          
+  font-weight: bold;
 }
 
 h2 {
@@ -118,20 +119,32 @@ figcaption {
   box-sizing: border-box; 
 }
 header {
-  background-color: #6B3E26; /* Dark Brown top bar */
-  color: #FFF8F0;            /* Cream text */
+  background-color: #6B3E26; 
+  background-image: 
+    radial-gradient(rgba(47, 42, 38, 0.15) 20%, transparent 20%),
+    radial-gradient(rgba(47, 42, 38, 0.15) 20%, transparent 20%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+
+  color: #FFF8F0;            
   padding: 16px;
   text-align: center;
 }
 
 header h1 {
-  color: #FFF8F0;            /* Keeps header title white/cream */
+  color: #2E7D32;           
+  font-size: 38px;  
+  text-align: left; 
   margin-bottom: 16px;
+  font-weight: bold;
 }
 
 header img {
-  margin: 0 auto;            /* Centers your logo on small screens */
+  margin-left: 0;      
+  margin-right: auto;  
+  display: block;      
 }
+
 
 /* Form inputs on contact page */
 form {
@@ -171,14 +184,16 @@ header nav ul {
 
 header nav a {
   display: block;
-  padding: 12px 20px;      
+  padding: 12px 20px;        
   text-decoration: none;
-  color: #FFF8F0;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFF8F0;            
+  background-color: #6B3E26; 
+  border: 1px solid #FFF8F0;
   font-weight: bold;
   border-radius: 4px;
   transition: background-color 0.2s, color 0.2s;
 }
+
 
 header nav a:link { color: #FFF8F0; }
 header nav a:visited { color: #FFF8F0; }
