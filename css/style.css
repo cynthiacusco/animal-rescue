@@ -12,68 +12,79 @@ body {
   background-color: #FFF8F0;
   color: #2F2A26;
 }
-
-/* 2. HEADER STRUCTURAL LAYOUT (ALWAYS PERFECTLY CENTERED) */
+/* 1. STRUCTURAL HEADER LAYOUT */
 header {
-  background-color: #0bc4a3; /* Vibrant aqua matching your logo letters */
-  padding: 32px 16px;
+  background-color: #0bc4a3; /* Your exact logo aqua color */
+  padding: 24px 40px;
   display: flex;
-  justify-content: center;   /* Centers horizontally */
-  align-items: center;       /* Centers vertically */
+  flex-direction: column;    /* Forces content to stack vertically */
+  align-items: center;       /* Centers the stacked components */
+  gap: 24px;                 /* Creates perfect spacing between rows */
   width: 100%;
 }
 
-.header-main-content {
+/* 2. TOP ROW CONTAINER (Logo + Title Text) */
+.header-top-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;       /* Keeps title and buttons aligned in the middle */
-  gap: 24px;                 /* Clean space between title and buttons */
   width: 100%;
-  max-width: 800px;          /* Prevents layout from getting too wide */
-  text-align: center;
+  align-items: center;       /* Vertically centers logo with text */
+  justify-content: flex-start;
+  gap: 20px;                 /* Small gap between logo image and title text */
 }
 
-/* 3. TYPOGRAPHY (BIG, FULLER & RESPONSIVE TITLE) */
+.logo-container {
+  flex-shrink: 0;            /* Stops your logo from shrinking */
+}
+
+.logo-img {
+  max-height: 80px;          /* Makes your logo slightly larger to balance the screen */
+  width: auto;
+  display: block;
+}
+
+/* 3. TYPOGRAPHY (BIG, FULLER, PROPORTIONAL TITLE) */
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3rem); /* Magic rule: Automatically shrinks on small screens so it never overflows */
-  font-weight: 800;          
-  color: #FFF8F0;            
+  font-size: clamp(2rem, 4vw, 3.2rem); /* Dynamic scale so it shrinks before hitting borders */
+  font-weight: 800;          /* Thicker lettering style */
+  color: #FFF8F0;            /* Soft off-white text color */
   margin: 0;
-  padding: 0 10px;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
-/* 4. NAVIGATION & CREAM LINK BUTTONS */
+/* 4. NAVIGATION CONTAINER (BOTTOM ROW) */
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* Perfectly centers your cream buttons horizontally */
+}
+
 header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap;           /* Allows buttons to wrap to a new line on small phone screens */
-  justify-content: center;   /* Centers the menu buttons */
-  gap: 12px;                 
+  flex-wrap: wrap;           /* Allows menu buttons to wrap cleanly on phone screens */
+  gap: 16px;                 /* Slightly wider gap between buttons */
 }
 
 header nav a {
   display: inline-block;
-  padding: 12px 24px;        
+  padding: 12px 28px;        /* Roomier button frames */
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
+  font-weight: 600;          /* Thicker text inside buttons */
   font-size: 16px;
-  color: #2F2A26;            
-  background-color: #F7F4EB; /* Soft cream background */
+  color: #2F2A26;            /* Crisp dark charcoal text color */
+  background-color: #F7F4EB; /* Beautiful soft cream color */
   border-radius: 6px;        
   transition: background-color 0.2s ease;
 }
 
-/* 5. INTERACTIVE BUTTON STATES */
 header nav a:hover {
-  background-color: #E9E4D5; 
+  background-color: #E9E4D5; /* Darker cream hover fade */
 }
 
 header nav a[aria-current="page"] {
   background-color: #E9E4D5; 
-  font-weight: 700;
 }
