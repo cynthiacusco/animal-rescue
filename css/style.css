@@ -15,55 +15,64 @@ body {
   line-height: 1.6;
 }
 
-/* 2. HEADER STRUCTURAL LAYOUT */
+/* ==========================================================================
+   CLEAN, BULLETPROOF HEADER LAYOUT
+   ========================================================================== */
 header {
-  background-color: #0bc4a3; /* Vibrant aqua matching your logo letters */
-  padding: 24px 16px;
+  background-color: #0bc4a3; /* Your exact logo aqua color */
+  padding: 30px 20px;
   display: flex;
-  flex-direction: column;    /* Vertically stacked rows on mobile screens */
-  align-items: center;       
-  gap: 20px;
-  width: 100%;
+  flex-direction: column;    /* Stacks title/logo row over the menu buttons */
+  align-items: center;       /* Centers everything down the middle */
+  gap: 24px;                 /* Generous space between rows */
+  width: 100% !important;    /* Forces header to stretch fully across the screen */
+  margin: 0;
 }
 
-/* Top Row: Holds Logo Area and Title Text Area side-by-side */
+/* The Top Line: Logo and Title text together */
 .header-top-row {
   display: flex;
-  flex-direction: column;    /* Stacked for small mobile screens */
-  align-items: center;      
-  width: 100%;
+  flex-direction: column;    /* Vertically stacked on mobile phones by default */
+  align-items: center;       /* Centers them on mobile screens */
+  justify-content: center;
   gap: 16px;
+  width: 100%;
 }
 
+/* THIS FIXES THE LOGO: Forces it to stay visible and not shrink to 0px */
 .logo-container {
   display: flex;
   justify-content: center;
-  flex-shrink: 0;
+  align-items: center;
+  flex-shrink: 0 !important; /* Absolute command: Do NOT let the browser squish this container */
+  min-width: 120px;          /* Matches your HTML width setting */
 }
 
 .logo-img {
-  max-height: 60px;          /* Clean proportional size for your logo */
-  width: auto;
+  width: 120px !important;   /* Matches your preferred width exactly */
+  height: auto;
   display: block;
 }
 
-/* Typography (Big, Fuller, and Responsive Title) */
+/* BIG, FULLER, TRULY CENTERED TITLE */
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 4vw, 3.2rem); 
-  font-weight: 800;          /* Thick strokes for full look */
-  color: #FFF8F0;            /* Crisp off-white title color */
+  font-size: clamp(1.8rem, 5vw, 3rem); /* Automatically resizes so it never overflows */
+  font-weight: 800;          /* Fuller, thicker letter weights */
+  color: #FFF8F0;            /* Beautiful soft off-white text color */
   margin: 0;
-  line-height: 1.1;
-  text-align: center;
+  text-align: center;        /* Forces the text to stay strictly in the middle */
+  line-height: 1.2;
   width: 100%;
 }
 
-/* 3. MENU NAVIGATION (Bottom Row) */
+/* ==========================================================================
+   CREAM NAVIGATION MENU BUTTONS
+   ========================================================================== */
 header nav {
   width: 100%;
   display: flex;
-  justify-content: center;   /* Centers the navigation row */
+  justify-content: center;   /* Centers your menu buttons on the page */
 }
 
 header nav ul {
@@ -71,9 +80,10 @@ header nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap;           /* Allows buttons to wrap cleanly on phones */
+  flex-direction: row;       /* Keeps buttons side-by-side */
+  flex-wrap: wrap;           /* Wraps buttons gracefully if a phone screen is narrow */
   justify-content: center;   
-  gap: 12px;                 /* Visual padding between options */
+  gap: 12px;
 }
 
 header nav a {
@@ -83,72 +93,36 @@ header nav a {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color: #2F2A26;            
-  background-color: #F7F4EB; /* Soft cream menu background */
-  border-radius: 6px;        /* Softened corners */
+  color: #2F2A26;            /* Crisp dark text color */
+  background-color: #F7F4EB; /* Soft cream color button background */
+  border-radius: 6px;
   transition: background-color 0.2s ease;
 }
 
-/* Interactive States */
-header nav a:hover {
-  background-color: #E9E4D5; /* Darker cream on hover */
-}
-
+header nav a:hover,
 header nav a[aria-current="page"] {
-  background-color: #E9E4D5; 
+  background-color: #E9E4D5; /* Darker cream on hover/active state */
 }
 
-/* 4. MAIN BODY SECTIONS STYLING */
-section {
-  padding: 24px;
-  max-width: 1000px;
-  margin: 32px auto;         /* Centers the text content blocks on the screen */
-  background-color: #FFFFFF; 
-  border-radius: 8px;
-}
-
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: #2F2A26;            
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-p { 
-  margin: 0 0 16px 0;
-}
-
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 24px 0;
-  border-radius: 8px;
-}
-
-/* 5. RESPONSIVE DESKTOP LAYOUT SHIFT (SCREENS WIDER THAN 768px) */
+/* ==========================================================================
+   DESKTOP SCREEN SCALE CHANGES (SCREENS WIDER THAN 768px)
+   ========================================================================== */
 @media (min-width: 768px) {
   header {
-    padding: 32px 40px;      /* Extra breathing space */
+    padding: 35px 40px;
   }
 
   .header-top-row {
-    flex-direction: row;     /* Positions logo container left and title right */
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;     /* Snaps logo and title side-by-side on computers */
+    justify-content: flex-start; /* Aligns items from the left edge */
   }
 
-  /* Pushes logo frame all the way left */
   .logo-container {
-    flex: 1;                 
-    justify-content: flex-start; 
+    margin-right: 20px;      /* Simple clean gap after the left-aligned logo */
   }
 
-  /* Centers the main text title area perfectly */
   header h1 {
-    flex: 2;                 
-    text-align: center;
+    text-align: center;      /* Keeps the title perfectly centered inside the remaining space */
+    margin-right: 140px;     /* Magic balancing trick: offsets the logo width so text stays centered on screen */
   }
 }
