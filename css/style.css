@@ -13,31 +13,35 @@ body {
   color: #2F2A26;
 }
 
-/* 2. HEADER STRUCTURAL LAYOUT */
+/* 2. HEADER STRUCTURAL LAYOUT (ALWAYS PERFECTLY CENTERED) */
 header {
   background-color: #0bc4a3; /* Vibrant aqua matching your logo letters */
-  padding: 32px 24px;
+  padding: 32px 16px;
   display: flex;
-  flex-direction: row;   
-  align-items: center;
-  gap: 20px;
+  justify-content: center;   /* Centers horizontally */
+  align-items: center;       /* Centers vertically */
+  width: 100%;
 }
 
 .header-main-content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;       /* Keeps title and buttons aligned in the middle */
+  gap: 24px;                 /* Clean space between title and buttons */
+  width: 100%;
+  max-width: 800px;          /* Prevents layout from getting too wide */
   text-align: center;
 }
 
-/* 3. TYPOGRAPHY (BIG & FULLER TITLE) */
+/* 3. TYPOGRAPHY (BIG, FULLER & RESPONSIVE TITLE) */
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 40px;           /* Increased font size */
-  font-weight: 800;          /* Thicker and fuller letter strokes */
-  color: #FFF8F0;            /* Clean off-white text color */
+  font-size: clamp(2rem, 5vw, 3rem); /* Magic rule: Automatically shrinks on small screens so it never overflows */
+  font-weight: 800;          
+  color: #FFF8F0;            
   margin: 0;
+  padding: 0 10px;
+  line-height: 1.2;
 }
 
 /* 4. NAVIGATION & CREAM LINK BUTTONS */
@@ -46,48 +50,30 @@ header nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row;       /* Keeps menu items in a horizontal row */
-  gap: 18px;                 /* Clean visual spacing between options */
+  flex-wrap: wrap;           /* Allows buttons to wrap to a new line on small phone screens */
+  justify-content: center;   /* Centers the menu buttons */
+  gap: 12px;                 
 }
 
 header nav a {
   display: inline-block;
-  padding: 12px 24px;        /* Roomy and proportional button boxes */
+  padding: 12px 24px;        
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: #2F2A26;            /* Dark text for great legibility on light buttons */
-  background-color: #F7F4EB; /* Soft, beautiful cream background */
-  border-radius: 6px;        /* Clean softened frame corners */
+  color: #2F2A26;            
+  background-color: #F7F4EB; /* Soft cream background */
+  border-radius: 6px;        
   transition: background-color 0.2s ease;
 }
 
 /* 5. INTERACTIVE BUTTON STATES */
 header nav a:hover {
-  background-color: #E9E4D5; /* Darker cream color on hover state */
+  background-color: #E9E4D5; 
 }
 
 header nav a[aria-current="page"] {
-  background-color: #E9E4D5; /* Highlights the active tab */
+  background-color: #E9E4D5; 
   font-weight: 700;
-}
-
-/* 6. RESPONSIVE DESKTOP SCALE (WIDER LAYOUTS) */
-@media (min-width: 768px) {
-  header {
-    flex-direction: row;     /* Flips logo and content side-by-side */
-    justify-content: space-between;
-    padding: 32px 40px;
-  }
-  
-  .header-main-content {
-    flex-grow: 1;
-    align-items: center;
-    margin-right: 80px;      /* Offsets layout to keep title centered */
-  }
-  
-  header h1 {
-    font-size: 48px;         /* Extra scaling boost on larger viewports */
-  }
 }
