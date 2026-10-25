@@ -112,24 +112,27 @@ header nav a[aria-current="page"] {
     padding: 35px 40px;
   }
 
+  /* Flips logo and title side-by-side on computers */
   .header-top-row {
     flex-direction: row;     
-    justify-content: flex-start; 
-    position: relative; /* 1. Acts as an anchor line for the logo */
+    justify-content: flex-start; /* Aligns them from the left edge */
+    align-items: center;         /* Centers them vertically */
   }
 
+  /* Gives the logo box a clean, predictable size on the left */
   .logo-container {
-    position: absolute; /* 2. Lifts the logo out of the text row layer */
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%); /* Keeps the logo centered vertically */
+    width: 150px;
+    display: flex;
+    justify-content: flex-start;
   }
 
+  /* Centers the title perfectly in the remaining space */
   header h1 {
     text-align: center;      
-    margin: 0 auto;     /* 3. Locks the title to the exact middle of the screen */
-    width: 100%;
+    flex-grow: 1;                /* Tells the title box to take up the rest of the row */
+    margin-right: 150px;         /* MAGIC FLEX BALANCE: Matches the logo width exactly to force the text into the dead center of the screen */
   }
 }
+
 
 }
