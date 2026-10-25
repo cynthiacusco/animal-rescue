@@ -1,4 +1,4 @@
-/* 1. SETUP & FONTS */
+/* 1. SETUP & FONTS INITIALIZATION */
 @import url('https://googleapis.com');
 
 *, *::before, *::after {
@@ -9,24 +9,27 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #FFF8F0;
-  color: #2F2A26;
+  background-color: #FFF8F0; /* Soft warm background */
+  color: #2F2A26;            /* Clean dark charcoal text */
+  font-size: 16px;
+  line-height: 1.6;
 }
-/* 1. STRUCTURAL HEADER LAYOUT */
+
+/* 2. HEADER STRUCTURAL LAYOUT */
 header {
-  background-color: #0bc4a3; /* Your exact logo aqua color */
-  padding: 24px 40px;
+  background-color: #0bc4a3; /* Vibrant aqua matching your logo letters */
+  padding: 24px 16px;
   display: flex;
-  flex-direction: column;    /* Forces content to stack vertically */
-  align-items: center;       /* Centers the stacked components */
-  gap: 24px;                 /* Creates perfect spacing between rows */
+  flex-direction: column;    /* Vertically stacked rows on mobile screens */
+  align-items: center;       
+  gap: 20px;
   width: 100%;
 }
 
-/* 1. TOP ROW CONTAINER (Changes to horizontal layout on desktop screens) */
+/* Top Row: Holds Logo Area and Title Text Area side-by-side */
 .header-top-row {
   display: flex;
-  flex-direction: column;   /* Stacks them on tiny phone screens first */
+  flex-direction: column;    /* Stacked for small mobile screens */
   align-items: center;      
   width: 100%;
   gap: 16px;
@@ -39,38 +42,113 @@ header {
 }
 
 .logo-img {
-  max-height: 80px;         
+  max-height: 60px;          /* Clean proportional size for your logo */
   width: auto;
   display: block;
 }
 
-/* 2. TYPOGRAPHY (Stays centered inside its own text space) */
+/* Typography (Big, Fuller, and Responsive Title) */
 header h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.8rem, 4vw, 3.2rem); 
-  font-weight: 800;          
-  color: #FFF8F0;            
+  font-weight: 800;          /* Thick strokes for full look */
+  color: #FFF8F0;            /* Crisp off-white title color */
   margin: 0;
   line-height: 1.1;
   text-align: center;
-  width: 100%;              /* Allows text-align center to work perfectly */
+  width: 100%;
 }
 
-/* 3. DESKTOP VIEWPORTS (Large screens over 768px wide) */
+/* 3. MENU NAVIGATION (Bottom Row) */
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* Centers the navigation row */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;           /* Allows buttons to wrap cleanly on phones */
+  justify-content: center;   
+  gap: 12px;                 /* Visual padding between options */
+}
+
+header nav a {
+  display: inline-block;
+  padding: 12px 24px;        
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2F2A26;            
+  background-color: #F7F4EB; /* Soft cream menu background */
+  border-radius: 6px;        /* Softened corners */
+  transition: background-color 0.2s ease;
+}
+
+/* Interactive States */
+header nav a:hover {
+  background-color: #E9E4D5; /* Darker cream on hover */
+}
+
+header nav a[aria-current="page"] {
+  background-color: #E9E4D5; 
+}
+
+/* 4. MAIN BODY SECTIONS STYLING */
+section {
+  padding: 24px;
+  max-width: 1000px;
+  margin: 32px auto;         /* Centers the text content blocks on the screen */
+  background-color: #FFFFFF; 
+  border-radius: 8px;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2F2A26;            
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+p { 
+  margin: 0 0 16px 0;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 24px 0;
+  border-radius: 8px;
+}
+
+/* 5. RESPONSIVE DESKTOP LAYOUT SHIFT (SCREENS WIDER THAN 768px) */
 @media (min-width: 768px) {
+  header {
+    padding: 32px 40px;      /* Extra breathing space */
+  }
+
   .header-top-row {
-    flex-direction: row;     /* Flips logo and title side-by-side */
+    flex-direction: row;     /* Positions logo container left and title right */
     justify-content: space-between;
     align-items: center;
   }
 
+  /* Pushes logo frame all the way left */
   .logo-container {
-    flex: 1;                 /* Allocates 1 share of space to the logo container */
-    justify-content: flex-start; /* Pushes the logo image all the way to the left edge */
+    flex: 1;                 
+    justify-content: flex-start; 
   }
 
+  /* Centers the main text title area perfectly */
   header h1 {
-    flex: 3;                 /* Allocates 3 shares of space to the title text area */
-    margin-right: 10%;       /* Offsets the layout slightly so the text centers visually on screen */
+    flex: 2;                 
+    text-align: center;
   }
 }
