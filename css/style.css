@@ -18,23 +18,23 @@ header {
   background-color: #0bc4a3; /* Vibrant aqua matching your logo letters */
   padding: 32px 24px;
   display: flex;
-  flex-direction: column;   /* Vertical layout for mobile screens */
+  flex-direction: row;   
   align-items: center;
   gap: 20px;
 }
 
 .header-main-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   text-align: center;
 }
 
 /* 3. TYPOGRAPHY (BIG & FULLER TITLE) */
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;           /* Increased font size */
+  font-size: 40px;           /* Increased font size */
   font-weight: 800;          /* Thicker and fuller letter strokes */
   color: #FFF8F0;            /* Clean off-white text color */
   margin: 0;
@@ -47,7 +47,7 @@ header nav ul {
   margin: 0;
   display: flex;
   flex-direction: row;       /* Keeps menu items in a horizontal row */
-  gap: 12px;                 /* Clean visual spacing between options */
+  gap: 18px;                 /* Clean visual spacing between options */
 }
 
 header nav a {
