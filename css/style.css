@@ -184,7 +184,7 @@ section li {
 /* ==========================================================================
    IMAGE & MEDIA RESPONSIVE LAYOUT FIX
    ========================================================================== */
-section img, section video {
+section img, section video, section audio {
   max-width: 100% !important; /* Forces BOTH pictures and videos to fit inside the yellow box */
   height: auto;               /* Keeps the scaling proportion perfect without stretching */
   display: block;             
