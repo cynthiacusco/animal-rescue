@@ -20,7 +20,7 @@ html, body {
 }
 
 /* ==========================================================================
-   2. MOBILE HEADER LAYOUT (ALWAYS CLEAN & STACKED DOWN THE MIDDLE)
+   2. MOBILE HEADER LAYOUT (SIMPLE VERTICAL FLEX)
    ========================================================================== */
 header {
   background-color: #0bc4a3; /* Your exact aqua color */
@@ -166,14 +166,14 @@ header nav ul li a[aria-current="page"] {
   color: #2F2A26 !important;
 }
 /* ==========================================================================
-   4. DESKTOP RESPONSIVE LAYOUT (SIMPLE CLEAN MARGINS ONLY)
+   4. DESKTOP RESPONSIVE LAYOUT (CLEAN NO-OVERLAP VERSION)
    ========================================================================== */
 @media (min-width: 768px) {
   header {
-    padding: 35px 40px;
+    padding: 24px 40px;      /* Clean breathing room for desktop monitors */
   }
 
-  /* Arranges the logo container and title box side-by-side */
+  /* Flips logo and title row side-by-side */
   .header-top-row {
     flex-direction: row;     
     justify-content: flex-start; 
@@ -188,24 +188,25 @@ header nav ul li a[aria-current="page"] {
     justify-content: flex-start;
   }
 
-  /* THE CLICK FIX: Centers text and stops the box from overlapping the menu */
+  /* THE CLICK FIX: Restricts the box size so it never reaches your buttons */
   header h1 {
     text-align: center;      
     flex-grow: 1;                
-    margin-right: 150px; /* Balance offset: keeps the title dead-center */
+    margin-right: 150px;     /* Balance offset: keeps the text visually centered */
     
-    /* Crucial spacing to prevent the title block from sliding down over the links */
-    height: auto;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    /* Crucial safety boundaries to protect your navigation links */
+    width: max-content;      /* Tells box to only be as wide as the words themselves */
+    max-height: 50px;        /* Stops the invisible box from growing downwards */
+    padding: 0;              /* Strips out the large padding that was overlapping your nav */
   }
 
-  /* Adds clean separation between your top row and your buttons row */
+  /* Moves your menu button row up slightly for an elegant look */
   header nav {
-    margin-top: 24px;
+    margin-top: 4px;         
     width: 100%;
   }
 }
+
 /* ==========================================================================
    5. SOFT YELLOW BODY CONTENT SECTIONS
    ========================================================================== */
