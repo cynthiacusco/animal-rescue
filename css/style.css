@@ -184,13 +184,13 @@ section li {
 /* ==========================================================================
    IMAGE & MEDIA RESPONSIVE LAYOUT FIX
    ========================================================================== */
-section img {
-  max-width: 100% !important; /* Force picture to shrink down to fit inside the yellow box */
-  height: auto;               /* Keeps the picture from looking stretched or squished */
-  display: block;             /* Clears surrounding text items */
-  margin: 20px auto;          /* Centers the image perfectly horizontally */
-  border-radius: 8px;         /* Softens the graphic corners to match your card edges */
-  border: 2px solid #FFFFFF;  /* Added a clean white frame to make the photo pop */
+section img, section video {
+  max-width: 100% !important; /* Forces BOTH pictures and videos to fit inside the yellow box */
+  height: auto;               /* Keeps the scaling proportion perfect without stretching */
+  display: block;             
+  margin: 20px auto;          /* Centers the media down the middle */
+  border-radius: 8px;         
+  border: 2px solid #FFFFFF;  /* Crisp white frame around the video player */
 }
 
 
