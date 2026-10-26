@@ -160,32 +160,45 @@ header nav ul li a[aria-current="page"] {
   font-weight: 700;                     /* Makes text extra bold to signal your current page location */
   color: #2F2A26 !important;
 }
-
 /* ==========================================================================
-   4. DESKTOP RESPONSIVE LAYOUT (REQUIRED MEDIA QUERY BREAKPOINT)
+   4. DESKTOP RESPONSIVE LAYOUT (SIMPLE CLEAN MARGINS ONLY)
    ========================================================================== */
 @media (min-width: 768px) {
   header {
     padding: 35px 40px;
   }
 
-  /* Flips logo container and title side-by-side on wide screens */
+  /* Arranges the logo container and title box side-by-side */
   .header-top-row {
     flex-direction: row;     
     justify-content: flex-start; 
     align-items: center;         
+    width: 100%;
   }
 
-  /* Grants the left logo a predictable block size */
+  /* Keeps the left logo box in a neat, fixed width */
   .logo-container {
     width: 150px;
+    display: flex;
+    justify-content: flex-start;
   }
 
-  /* Uses flex-grow and a matching right margin to align text dead-center */
+  /* THE CLICK FIX: Centers text and stops the box from overlapping the menu */
   header h1 {
     text-align: center;      
     flex-grow: 1;                
-    margin-right: 150px;         /* Balance offset: perfectly centers text on desktop */
+    margin-right: 150px; /* Balance offset: keeps the title dead-center */
+    
+    /* Crucial spacing to prevent the title block from sliding down over the links */
+    height: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Adds clean separation between your top row and your buttons row */
+  header nav {
+    margin-top: 24px;
+    width: 100%;
   }
 }
 /* ==========================================================================
