@@ -23,15 +23,20 @@ html, body {
    2. MOBILE HEADER LAYOUT (ALWAYS CLEAN & STACKED DOWN THE MIDDLE)
    ========================================================================== */
 header {
-  background-color: #0bc4a3; /* Color 3: Vibrant Brand Aqua Green */
+  background-color: #0bc4a3; /* Your exact aqua color */
   padding: 24px 16px;
+  
+  /* Standard Flexbox layout to separate rows */
   display: flex;
-  flex-direction: column;    /* Stacks elements vertically down the middle */
-  align-items: center;
-  gap: 20px;
-  width: 100%;
+  flex-direction: column;    /* Stacks top row above navigation buttons */
+  align-items: center;       /* Centers elements horizontally */
+  justify-content: center;   /* Centers elements vertically */
+  gap: 24px;                 /* FORCES a clean physical gap so rows can never overlap */
+  
+  width: 100% !important;    
   margin: 0;
 }
+
 
 /* Container stacks logo on top of title text for mobile screens */
 .header-top-row {
