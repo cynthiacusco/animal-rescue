@@ -213,3 +213,92 @@ footer {
   margin-top: 32px;
   width: 100%;
 }
+/* update for js*/
+.hidden {
+  display: none !important;
+}
+
+.interest-toggle-btn,
+#clear-interests-btn,
+button[type="submit"] {
+  background-color: #0bc4a3;
+  color: #FFF8F0;
+  border: none;
+  padding: 10px 18px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.interest-toggle-btn:hover,
+button[type="submit"]:hover {
+  background-color: #099e83;
+}
+
+.interest-toggle-btn.saved-active {
+  background-color: #2F2A26;
+  color: #FFF8F0;
+}
+
+#clear-interests-btn {
+  background-color: #8c2d2d;
+  margin-top: 12px;
+}
+
+#clear-interests-btn:hover {
+  background-color: #6e2222;
+}
+
+.saved-tracker-box {
+  background-color: #FFF8F0;
+  border: 2px solid #0bc4a3;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+
+.prefill-notice {
+  background-color: #FFF8F0;
+  border-left: 5px solid #0bc4a3;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.error-message {
+  display: block;
+  color: #b31b1b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.input-error {
+  border: 2px solid #b31b1b !important;
+  background-color: #fff5f5;
+}
+
+.form-success {
+  background-color: #e6f9f5;
+  border: 2px solid #0bc4a3;
+  color: #2F2A26;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.form-alert {
+  background-color: #fff5f5;
+  border: 2px solid #b31b1b;
+  color: #b31b1b;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-top: 16px;
+}

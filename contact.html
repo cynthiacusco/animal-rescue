@@ -4,64 +4,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Twin Cities Animal Rescue</title>
- <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <header>
-  <div class="header-top-row">
-    <div class="logo-container">
-    <img src="media/rescue-logo_c.png" alt="Twin Cities Animal Rescue corporate logo." width="120">
+  <header>
+    <div class="header-top-row">
+      <div class="logo-container">
+        <img src="media/rescue-logo_c.png" alt="Twin Cities Animal Rescue corporate logo." width="120">
+      </div>
+      <h1>Twin Cities Animal Rescue 🐾</h1>
     </div>
-    <h1>Twin Cities Animal Rescue &#128062;</h1>
-  </div>
-  <nav>
-    <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-  <!-- Main Website Content Areas -->
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main id="main-content">
-    
-    <!-- Office Hours & Service Area Info -->
     <section>
       <h2>Reach Out to Us</h2>
       <p><strong>Where We Serve:</strong> The Twin Cities Metro region and surrounding local neighborhoods.</p>
       <p><strong>Our Hours:</strong> Monday through Saturday, 9:00 AM to 5:00 PM (Our volunteers rest on Sundays!).</p>
     </section>
 
-    <!-- Section 2: Required HTML Form with Fieldset & Validation -->
     <section>
       <h2>Volunteer & Foster Interest Form</h2>
       <p>If you have room in your heart or your schedule to help, please fill out our simple form below. <br>A volunteer coordinator will read through your response and get back to you within a few business days.</p>
-      <audio
-				src="media/rescue-message_c.mp3"
-				controls
-				loop
-				muted>
-				Your browser cannot play this audio.
-			</audio>
-      <form action="/submit-application" method="post">
-       
-        <fieldset style="display: inline-block; padding: 20px; max-width: 500px;">
+      <audio src="media/rescue-message_c.mp3" controls loop muted>
+        Your browser cannot play this audio.
+      </audio>
+
+      <div id="prefill-banner" class="prefill-notice hidden"></div>
+
+      <form action="/submit-application" method="post" novalidate>
+        <fieldset style="display: block; padding: 20px; max-width: 550px;">
           <legend><strong>Join Our Volunteer Network</strong></legend>
 
-          <!-- Name  -->
+          <!-- Name -->
           <p>
             <label for="user-name">Your Full Name:</label><br>
             <input type="text" id="user-name" name="full_name" placeholder="e.g. Jane Doe" required>
+            <span class="error-message" id="user-name-error"></span>
           </p>
 
-          <!-- Email  -->
+          <!-- Email -->
           <p>
             <label for="user-email">Email Address:</label><br>
             <input type="email" id="user-email" name="email_address" placeholder="name@example.com" required>
+            <span class="error-message" id="user-email-error"></span>
           </p>
 
-          <!-- Dropdown Option  -->
+          <!-- Dropdown Option -->
           <p>
             <label for="interest-type">How Would You Like to Help?</label><br>
             <select id="interest-type" name="interest_category" required>
@@ -70,29 +67,29 @@
               <option value="foster">I want to become a foster home</option>
               <option value="adoption">I have a general question about an animal</option>
             </select>
+            <span class="error-message" id="interest-type-error"></span>
           </p>
 
-          <!-- Availability  -->
-                   <!-- Explicit Checkbox for Availability -->
+          <!-- Availability -->
           <p>When Are You Usually Available? (Select all that apply):<br>
-            
             <input type="checkbox" id="avail-weekday" name="availability" value="weekday">
             <label for="avail-weekday">Weekday Mornings (Mon-Fri)</label><br>
             
             <input type="checkbox" id="avail-evening" name="availability" value="evening">
             <label for="avail-evening">Weekday Evenings (Mon-Fri)</label><br>
             
-            <input type="checkbox" id="avail-weekend" name="availability" value="weekend">
-            <label for="avail-weekend">Saturdays</label><br>
-            <input type="checkbox" id="avail-weekend" name="availability" value="weekend">
-            <label for="avail-weekend">Sundays</label>
-          </p>
+            <input type="checkbox" id="avail-saturday" name="availability" value="saturday">
+            <label for="avail-saturday">Saturdays</label><br>
 
+            <input type="checkbox" id="avail-sunday" name="availability" value="sunday">
+            <label for="avail-sunday">Sundays</label>
+          </p>
 
           <!-- Experience Group -->
           <p>
             <label for="user-experience">Tell Us a Little About Your Experience With Pets:</label><br>
             <textarea id="user-experience" name="pet_experience" rows="3" style="width: 95%;" placeholder="Do you currently have pets? Have you cared for rescue animals before?" required></textarea>
+            <span class="error-message" id="user-experience-error"></span>
           </p>
 
           <!-- Short Message Group -->
@@ -102,18 +99,16 @@
           </p>
 
           <button type="submit">Submit My Inquiry</button>
-
+          <div id="form-status-message"></div>
         </fieldset>
-
       </form>
     </section>
-
   </main>
 
-  <!-- Page Footer -->
   <footer>
-    <p>&copy; 2026 Twin Cities Animal Rescue.
+    <p>&copy; 2026 Twin Cities Animal Rescue.</p>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>

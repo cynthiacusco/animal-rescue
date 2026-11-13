@@ -7,50 +7,65 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <header>
-  <div class="header-top-row">
-    <div class="logo-container">
-    <img src="media/rescue-logo_c.png" alt="Twin Cities Animal Rescue corporate logo." width="120">
+  <header>
+    <div class="header-top-row">
+      <div class="logo-container">
+        <img src="media/rescue-logo_c.png" alt="Twin Cities Animal Rescue corporate logo." width="120">
+      </div>
+      <h1>Twin Cities Animal Rescue 🐾</h1>
     </div>
-    <h1>Twin Cities Animal Rescue &#128062;</h1>
-  </div>
 
-  <nav>
-    <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="services.html">Services</a></li>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+      </ul>
+    </nav>
+  </header>
+
   <main id="main-content">
-    
-    <!--  Adoption Process  -->
+    <!-- Interactive Saved Interests Tracker -->
+    <section>
+      <h2>Your Saved Rescue Interests (<span id="saved-count">0</span>)</h2>
+      <p>Bookmark the ways you would like to help below. Your selections stay saved and will automatically pre-fill our <a href="contact.html">Contact Form</a>.</p>
+      <div class="saved-tracker-box">
+        <ul id="saved-interests-list">
+          <li>No programs saved yet. Click a button below to bookmark how you want to help!</li>
+        </ul>
+        <button type="button" id="clear-interests-btn">Clear Saved List</button>
+      </div>
+    </section>
+
+    <!-- Adoption Process -->
     <section>
       <h2>Adopting a Companion</h2>
-      <p>We don't believe in rushed adoptions. We take the time to learn their unique personalities and  we will walk you through a relaxed, step-by-step match process to make sure your household and your new pet are a <em>perfect fit</em> for life.</p>
+      <p>We don't believe in rushed adoptions. We take the time to learn their unique personalities and we will walk you through a relaxed, step-by-step match process to make sure your household and your new pet are a <em>perfect fit</em> for life.</p>
+      <button type="button" class="interest-toggle-btn" data-program="adoption">+ Save This Option</button>
       <img src="media/rescue-pet_c.png" alt="A cute and small brown guinea pig with a distinct white line in the middle of its face, looking directly into the lens.">
-</section>
+    </section>
 
-    <!--  Foster Program Overview -->
+    <!-- Foster Program Overview -->
     <section>
       <h2>Opening Your Home to Foster</h2>
       <p>Fostering is the absolute heartbeat of our rescue. Because we do not own a giant commercial brick-and-mortar shelter building, we can only save an animal if a local neighbor has an extra room or an open spot on their couch. We provide all the food, crates, and medical supplies—you just provide the safety and love.</p>
+      <button type="button" class="interest-toggle-btn" data-program="foster">+ Save This Option</button>
     </section>
 
-    <!-- Section 3: Volunteer Role Descriptions -->
+    <!-- Volunteer Role Descriptions -->
     <section>
       <h2>Ways to Volunteer</h2>
       <p>You don't need a background in veterinary medicine to make a huge difference here. Our little rescue relies on neighbors to help transport animals to vet appointments, write stories for our website, handle administrative paperwork, or help out at weekend community adoption events.</p>
+      <button type="button" class="interest-toggle-btn" data-program="volunteer">+ Save This Option</button>
       <img src="media/rescue-volunteer_c.png" alt="A male rescue volunteer in a white t-shirt gently holding the paw of a happy fluffy brown dog looking forward.">
- </section>
-
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2026 Twin Cities Animal Rescue.</p>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
