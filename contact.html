@@ -13,8 +13,9 @@
         <img src="media/rescue-logo_c.png" alt="Twin Cities Animal Rescue corporate logo." width="120">
       </div>
       <h1>Twin Cities Animal Rescue 🐾</h1>
-   <button type="button" id="theme-btn" aria-label="Screen Mode" title="Screen Mode">⚫</button>
+      <button type="button" id="theme-btn" aria-label="Screen Mode" title="Screen Mode">⚫</button>
     </div>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -45,33 +46,30 @@
         <fieldset style="display: block; padding: 20px; max-width: 550px;">
           <legend><strong>Join Our Volunteer Network</strong></legend>
 
-          <!-- Name -->
           <p>
             <label for="user-name">Your Full Name:</label><br>
             <input type="text" id="user-name" name="full_name" placeholder="e.g. Jane Doe" required>
             <span class="error-message" id="user-name-error"></span>
           </p>
 
-          <!-- Email -->
           <p>
             <label for="user-email">Email Address:</label><br>
             <input type="email" id="user-email" name="email_address" placeholder="name@example.com" required>
             <span class="error-message" id="user-email-error"></span>
           </p>
+            <p>How Would You Like to Help? (Select all that apply):<br>
+            <input type="checkbox" id="help-adoption" name="interest_category" value="adoption">
+            <label for="help-adoption">I want to adopt a companion</label><br>
 
-          <!-- Dropdown Option -->
-          <p>
-            <label for="interest-type">How Would You Like to Help?</label><br>
-            <select id="interest-type" name="interest_category" required>
-              <option value="">-- Please Select an Option --</option>
-              <option value="volunteer">I want to volunteer my time</option>
-              <option value="foster">I want to become a foster home</option>
-              <option value="adoption">I have a general question about an animal</option>
-            </select>
+            <input type="checkbox" id="help-foster" name="interest_category" value="foster">
+            <label for="help-foster">I want to become a foster home</label><br>
+
+            <input type="checkbox" id="help-volunteer" name="interest_category" value="volunteer">
+            <label for="help-volunteer">I want to volunteer my time</label>
             <span class="error-message" id="interest-type-error"></span>
           </p>
 
-          <!-- Availability -->
+
           <p>When Are You Usually Available? (Select all that apply):<br>
             <input type="checkbox" id="avail-weekday" name="availability" value="weekday">
             <label for="avail-weekday">Weekday Mornings (Mon-Fri)</label><br>
@@ -86,14 +84,12 @@
             <label for="avail-sunday">Sundays</label>
           </p>
 
-          <!-- Experience Group -->
           <p>
             <label for="user-experience">Tell Us a Little About Your Experience With Pets:</label><br>
             <textarea id="user-experience" name="pet_experience" rows="3" style="width: 95%;" placeholder="Do you currently have pets? Have you cared for rescue animals before?" required></textarea>
             <span class="error-message" id="user-experience-error"></span>
           </p>
 
-          <!-- Short Message Group -->
           <p>
             <label for="user-message">Anything Else You Would Like to Share? (Optional):</label><br>
             <textarea id="user-message" name="personal_message" rows="3" style="width: 95%;" placeholder="Tell us what inspired you to reach out!"></textarea>

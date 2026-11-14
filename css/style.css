@@ -5,14 +5,17 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
-  background-color: #FFF8F0; /* Color 1: Soft Warm Ivory Page Background */
-  color: #2F2A26;            /* Color 2: Dark Charcoal Body Text */
+  background-color: #FFF8F0;
+  color: #2F2A26;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -281,4 +284,111 @@ body.dark-mode section h2,
 body.dark-mode section strong,
 body.dark-mode section b {
   color: #FFF8F0;
+}
+#help-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #F7F4EB;
+  color: #2F2A26;
+  border-bottom: 3px solid #0bc4a3;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.help-bar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pick-btn,
+#go-contact-btn {
+  background-color: #0bc4a3;
+  color: #FFF8F0;
+  border: none;
+  padding: 8px 14px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pick-btn.picked {
+  background-color: #2F2A26;
+  color: #FFF8F0;
+}
+
+#clear-help-btn {
+  background-color: #a3a0a0;
+  color: #FFF8F0;
+  border: none;
+  padding: 8px 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+body.dark-mode #help-bar {
+  background-color: #2c2723;
+  color: #FFF8F0;
+}
+.hidden {
+  display: none !important;
+}
+
+.prefill-notice {
+  background-color: #FFF8F0;
+  color: #2F2A26;
+  border-left: 5px solid #0bc4a3;
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.error-message {
+  display: block;
+  color: #b31b1b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+body.dark-mode .error-message {
+  color: #ff8a8a;
+}
+
+.input-error {
+  border: 2px solid #b31b1b !important;
+  background-color: #fff5f5;
+}
+
+.form-success {
+  background-color: #e6f9f5;
+  border: 2px solid #0bc4a3;
+  color: #2F2A26;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+.form-alert {
+  background-color: #fff5f5;
+  border: 2px solid #b31b1b;
+  color: #b31b1b;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-top: 16px;
 }
